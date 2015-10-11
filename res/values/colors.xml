@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="arc_bar_bg">#CCCCCC</color>
+    <color name="arc_bar_progress">#C72527</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#C72527</color>
+    <color name="light_red">#FF6666</color>
+    <color name="blue">#ff28aae5</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="divide_line">#D1D1D1</color>
+    <color name="divide_line_drawer">#CCCCCC</color>
+    <color name="drawer_bg">#242424</color>
+    <color name="seek_bar_bg">#DBDBDB</color>
+    <color name="seek_bar_circle">#AFAFAF</color>
+    <color name="seek_bar_progress_on">@color/red</color>
+    <color name="seek_bar_progress_off">@color/font_minor</color>
+    
+    <!-- 字体颜色 -->
+    <color name="font_major">#1A1A1A</color>
+    <color name="font_minor">#808080</color>
+    <color name="font_red">#FF5252</color>
+    <color name="font_blue">#00B0FF</color>
+    <color name="font_gray">#666666</color>
+    <color name="font_black">#333333</color>
+    
+    <color name="main_color">@color/blue</color>
+	<color name="main_light_color">#ff84bfe2</color>
+</resources>

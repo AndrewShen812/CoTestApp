@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CalendarView="http://schemas.android.com/apk/res/com.sy.testapp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/CalendarWeekTitle"
+            android:text="SUN" />
+
+        <TextView
+            style="@style/CalendarWeekTitle"
+            android:text="MON" />
+
+        <TextView
+            style="@style/CalendarWeekTitle"
+            android:text="TUE" />
+
+        <TextView
+            style="@style/CalendarWeekTitle"
+            android:text="WED" />
+
+        <TextView
+            style="@style/CalendarWeekTitle"
+            android:text="THU" />
+
+        <TextView
+            style="@style/CalendarWeekTitle"
+            android:text="FRI" />
+
+        <TextView
+            style="@style/CalendarWeekTitle"
+            android:text="SAT" />
+    </LinearLayout>
+
+<!--     <com.sy.testapp.view.CalendarView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        CalendarView:setMonth="10"
+        CalendarView:showMonthTitle="false"
+        CalendarView:selectedDayColor="@color/blue"/> -->
+    
+     <GridView
+        android:id="@+id/gv_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:gravity="center"
+        android:numColumns="7" >
+    </GridView>
+
+</merge>

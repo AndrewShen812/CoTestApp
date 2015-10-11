@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sy.testapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <!-- Copied from Google Maps Library/AndroidManifest.xml. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- External storage for caching. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- My Location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Maps API needs OpenGL ES 2.0. -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <!-- End of copy. -->
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:name=".TestApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+
+        <!--
+         ** You need to replace the key below with your own key. **
+         The example key below will not be accepted because it is not linked to the
+         certificate which you will use to sign this application.
+         See: https://developers.google.com/maps/documentation/android/start
+         for instructions on how to get your own key.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBqLtkXJwsiUvb7LcbDC0zZ9hSJjAnoXLY" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".MainActivity" >
+        </activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SwitchLanguageActivity"
+            android:label="@string/title_activity_second" >
+        </activity>
+        <activity android:name=".ViewPagerTestActivity" >
+        </activity>
+        <activity android:name=".ArcSeekBarActivity" >
+        </activity>
+        <activity android:name=".JniTestActivity" >
+        </activity>
+        <activity android:name=".ShapeTestActivity" >
+        </activity>
+        <activity
+            android:name=".WaveTestActivity"
+            android:label="@string/title_activity_wave_test" >
+        </activity>
+        <activity
+            android:name="com.sy.cartracker.CalendarTestActivity"
+            android:label="@string/title_activity_calendar_test" >
+        </activity>
+        <activity
+            android:name=".MonthCalendarActivity"
+            android:label="@string/title_activity_month_calendar" >
+        </activity>
+        <activity android:name="com.sy.cartracker.MonthCalendarActivity" >
+        </activity>
+        <activity
+            android:name="com.sy.cartracker.DayTripActivity"
+            android:label="@string/title_activity_day_trip" >
+        </activity>
+        <activity
+            android:name="com.sy.cartracker.PieChartActivity"
+            android:label="@string/title_activity_pie_chart" >
+        </activity>
+        <!-- 关闭硬件加速，否则无法显示绘制的虚线 -->
+        <activity
+            android:name="com.sy.cartracker.LineChartActivity"
+            android:hardwareAccelerated="false"
+            android:label="@string/title_activity_line_chart" >
+        </activity>
+        <activity
+            android:name="com.sy.cartracker.GoogleMapActivity"
+            android:label="@string/title_activity_google_map" >
+        </activity>
+    </application>
+
+</manifest>

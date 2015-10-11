@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">测试App</string>
+    <string name="hello_world">世界，你好！</string>
+    <string name="action_settings">设置</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="desc_welcome">WelcomeActivity</string>
+    <string name="search_device">搜索设备</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="switch_lang">切换语言</string>
+    <string name="txt_login">登录</string>
+    <string name="title_activity_wave_test">WaveTestActivity</string>
+    <string name="txt_test_wave">波纹动画</string>
+    <string name="txt_test_arc_seek">ArcSeek</string>
+    <string name="txt_test_jni">JNI测试</string>
+    <string name="txt_test_Pager">滑动</string>
+    <string name="txt_test_shape">shape测试</string>
+    <string name="txt_test_language">语言切换</string>
+    <string name="txt_test_calendar">日历</string>
+    <string name="txt_test_mon_calendar">月历</string>
+    <string name="txt_test_pie_chart">饼状图</string>
+    <string name="txt_test_line_chart">折线图</string>
+    <string name="txt_test_google_map">地图</string>
+    <string name="title_activity_calendar_test">CalendarTestActivity</string>
+    <string name="title_activity_month_calendar">MonthCalendarActivity</string>
+    <string name="title_activity_day_trip">DayTripActivity</string>
+    <string name="plug_kwh">度</string>
+    <string name="title_activity_pie_chart">PieChartActivity</string>
+    <string name="electric_hight">峰电</string>
+    <string name="electric_low">谷电</string>
+    <string name="title_activity_line_chart">LineChartActivity</string>
+    <string name="title_activity_google_map">GoogleMapActivity</string>
+    <string name="geo_fence_radius">围栏半径</string>
+
+</resources>

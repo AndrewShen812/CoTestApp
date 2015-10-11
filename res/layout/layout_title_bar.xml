@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/distance_50"
+    android:background="@color/blue" >
+
+    <ImageView
+        android:id="@+id/iv_title_nav_back"
+        android:layout_width="@dimen/distance_50"
+        android:layout_height="@dimen/distance_50"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/selector_title_nav_back"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tv_title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_20" />
+
+    <ImageView
+        android:id="@+id/iv_title_add"
+        android:layout_width="@dimen/distance_50"
+        android:layout_height="@dimen/distance_50"
+        android:layout_toLeftOf="@+id/iv_title_menu"
+        android:background="@drawable/selector_title_add"
+        android:scaleType="fitXY"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/iv_title_menu"
+        android:layout_width="@dimen/distance_50"
+        android:layout_height="@dimen/distance_50"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/selector_title_menu"
+        android:scaleType="fitXY"/>
+
+</RelativeLayout>
