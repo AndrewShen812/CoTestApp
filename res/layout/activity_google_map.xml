@@ -10,22 +10,38 @@
         android:layout_weight="5"
         class="com.google.android.gms.maps.SupportMapFragment" />
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center"
-        android:stretchColumns="1" >
+        android:orientation="vertical" >
 
-        <TableRow
+        <TextView
+            android:id="@+id/tv_map_radius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:text="10km" />
+
+        <SeekBar
+            android:id="@+id/sb_map_geofence_radius"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical" >
+            android:maxHeight="8dp"
+            android:minHeight="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:progressDrawable="@drawable/layer_seekbar"
+            android:thumb="@drawable/shape_seekbar_thumb"
+            android:thumbOffset="0dp" />
 
-            <TextView android:text="@string/geo_fence_radius" />
-
-            <SeekBar android:id="@+id/sb_map_geofence_radius" />
-        </TableRow>
-    </TableLayout>
+        <TextView
+            android:id="@+id/tv_map_radius_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="radius" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -6,8 +6,6 @@
  */
 package com.sy.testapp.view;
 
-import com.sy.testapp.util.ScreenUtil;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -18,6 +16,8 @@ import android.graphics.PathEffect;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.sy.testapp.util.ScreenUtil;
 
 /**
  * @项目名称：TestApp
@@ -66,7 +66,7 @@ public class LineChartView extends View {
     
     private String[] yLabels = {"210", "120", "30"};
     
-    private boolean mShowYLabel = true;
+    private boolean mShowYLabel = false;
     
     /** Y方向上多少根线 */
     private int yLevels = DEF_LEVELS;
@@ -120,22 +120,42 @@ public class LineChartView extends View {
     }
     
     protected void onDraw(Canvas canvas) {
-        mPaint.setPathEffect(pe);
         for (int i=0; i<yLevels; i++) {
-            // 画线
-            if (i == yLevels - 1) {
-                mPaint.setPathEffect(null); // 清除虚线设置
-            }
-            canvas.drawLine(mPadding, mLevelGap * (i + 1),
-                            mPadding + mLineLength, mLevelGap * (i + 1), mPaint);
+            // 刻度数值
             if (mShowYLabel && i < yLabels.length) {
                 float txtLen = mPaint.measureText(yLabels[i]);
                 FontMetrics fm = mPaint.getFontMetrics();
                 float txtH = fm.bottom - fm.top;
-                canvas.drawText(yLabels[i], mPadding-txtLen, mLevelGap * (i + 1) + txtH/2, mPaint);
+//                float txtY = mLevelGap * (i + 1)
+                canvas.drawText(yLabels[i], mPadding-txtLen*1.5f, mLevelGap * (i + 1) + txtH/3, mPaint);
+            }
+            // 画线
+            if (i != yLevels - 1) {
+                mPaint.setPathEffect(pe);
+            }
+            canvas.drawLine(mPadding, mLevelGap * (i + 1),
+                            mPadding + mLineLength, mLevelGap * (i + 1), mPaint);
+            mPaint.setPathEffect(null); // 清除虚线设置
+        }
+        int xLevelGap = mLineLength / (xLabels.length-1);
+        // 绘制X轴刻度
+        if (null != xLabels && xLabels.length > 0) {
+            FontMetrics fm = mPaint.getFontMetrics();
+            float fontH = fm.bottom - fm.top;
+            for(int i=0; i<xLabels.length; i++) {
+                if (i == xLabels.length-1) {
+                    float txtW = mPaint.measureText(xLabels[i]);
+                    canvas.drawText(xLabels[i], mPadding + xLevelGap * i - txtW, mLevelGap*yLevels + fontH, mPaint);
+                }
+                else {
+                    canvas.drawText(xLabels[i], mPadding + xLevelGap * i, mLevelGap*yLevels + fontH, mPaint);
+                }
             }
         }
-        
-
+        // 画数据折线
+        canvas.translate(mPadding, mLevelGap*yLevels);
+        mPaint.setColor(Color.GREEN);
+        canvas.drawLine(0, -mLevelGap - 20, xLevelGap, -mLevelGap - 20, mPaint);
+        canvas.drawLine(xLevelGap + 80, -mLevelGap - 20, xLevelGap*2 - 20, -mLevelGap - 20, mPaint);
     }
 }

@@ -3,6 +3,7 @@ package com.sy.cartracker;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.graphics.Color;
 import android.graphics.Point;
 import android.location.Location;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.sy.testapp.BaseActivity;
 import com.sy.testapp.R;
 import com.sy.testapp.TestApp;
@@ -29,7 +31,7 @@ public class GoogleMapActivity extends BaseActivity implements OnSeekBarChangeLi
 OnMarkerDragListener, OnMapLongClickListener, OnMapReadyCallback {
     
     private static final LatLng SYDNEY = new LatLng(-33.87365, 151.20689);
-    private static final LatLng CHENGDU = new LatLng(30.68387, 104.04227);
+    private static final LatLng HOME = new LatLng(30.68387, 104.04227);
     private static final double DEFAULT_RADIUS = 1000;
     private static final double MIN_RADIUS = 500;
     private static final double MAX_RADIUS = 1500;
@@ -47,6 +49,25 @@ OnMarkerDragListener, OnMapLongClickListener, OnMapReadyCallback {
     private double mRadius;
     private float mDensity = TestApp.getInstance().getResources().getDisplayMetrics().density;
 
+    /** 画线测试位置 */
+    private static final LatLng FUQIN = new LatLng(30.67855, 104.03604);
+    private static final LatLng YINGMENKOU = new LatLng(30.68530, 104.04215);
+    private static final LatLng LIJIAO = new LatLng(30.68914, 104.03895);
+    private static final LatLng XIQUYIYUAN = new LatLng(30.68252, 104.03074);
+    private static final LatLng RING_2ND_EWST = new LatLng(30.67539, 104.023165);
+    private static final LatLng RING_2ND_MID = new LatLng(30.67425, 104.02214);
+    private static final LatLng RING_2ND_MID2 = new LatLng(30.67269, 104.02167);
+    private static final LatLng RING_2ND_EAST = new LatLng(30.67196, 104.02159);
+    private static final LatLng QINGJIANG = new LatLng(30.67028, 104.02150);
+    private static final LatLng SUPO = new LatLng(30.67264, 104.00664);
+    private static final LatLng SUPO_EAST = new LatLng(30.67378, 103.99437);
+    private static final LatLng SUPO_LIJIAO = new LatLng(30.67362, 103.99056);
+    private static final LatLng WUQING = new LatLng(30.67370, 103.97704);
+    private static final LatLng RIYUE = new LatLng(30.67434, 103.97434);
+    private static final LatLng RIYUE2 = new LatLng(30.68053, 103.95368);
+    private static final LatLng TENGFEI = new LatLng(30.68141, 103.95214);
+    private static final LatLng END = new LatLng(30.68425, 103.95405);
+    
     /********** 可拖动圆圈类 *********/
     private class DraggableCircle {
         private final Marker centerMarker;
@@ -137,13 +158,26 @@ OnMarkerDragListener, OnMapLongClickListener, OnMapReadyCallback {
         mStrokeColor = mFillColor;
 
 //        DraggableCircle circle = new DraggableCircle(SYDNEY, DEFAULT_RADIUS);
-        DraggableCircle circle = new DraggableCircle(CHENGDU, DEFAULT_RADIUS);
+        DraggableCircle circle = new DraggableCircle(HOME, DEFAULT_RADIUS);
         mCircles.add(circle);
 
+        
+        /** 
+         * 画线测试 :家-->公司
+         * */
+        map.addPolyline(new PolylineOptions()
+                    .add(HOME, YINGMENKOU, LIJIAO, RING_2ND_EWST,
+                         RING_2ND_MID, RING_2ND_MID2, RING_2ND_EAST,
+                         QINGJIANG, SUPO, SUPO_EAST, SUPO_LIJIAO,
+                         WUQING, RIYUE, RIYUE2, TENGFEI, END)
+                    .width(4 * mDensity)
+                    .color(Color.RED)
+                    .geodesic(true)); // TODO 什么意思?
+        
         // Move the map so that it is centered on the initial circle
 //        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SYDNEY, 4.0f));
         // TODO 放大级别确定
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(CHENGDU, DEF_ZOOM_LEVEL));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(HOME, DEF_ZOOM_LEVEL));
     }
 
     @Override

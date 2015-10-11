@@ -90,6 +90,9 @@ public class BaseActivity extends FragmentActivity {
         mLayoutContainer.addView(mTitle);
         mLayoutContainer.addView(content, lParams);
     }
+    protected void lockDrawerScroll() {
+        mDrawerContainer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+    }
     
     private OnTitleClickListener mTitleListener = new OnTitleClickListener() {
         @Override
