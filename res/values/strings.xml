@@ -22,6 +22,8 @@
     <string name="txt_test_pie_chart">饼状图</string>
     <string name="txt_test_line_chart">折线图</string>
     <string name="txt_test_google_map">地图</string>
+    <string name="txt_test_list_setting">设置列表</string>
+    <string name="txt_test_sliding_drawer">侧边栏</string>
     <string name="title_activity_calendar_test">CalendarTestActivity</string>
     <string name="title_activity_month_calendar">MonthCalendarActivity</string>
     <string name="title_activity_day_trip">DayTripActivity</string>
@@ -32,5 +34,12 @@
     <string name="title_activity_line_chart">LineChartActivity</string>
     <string name="title_activity_google_map">GoogleMapActivity</string>
     <string name="geo_fence_radius">围栏半径</string>
+    <string name="title_activity_list_menu">ListMenuActivity</string>
+    <string name="setting_item_speed">Speed</string>
+    <string name="setting_item_distance">Distance</string>
+    <string name="setting_item_time">Time</string>
+    <string name="setting_item_voice">Vioice</string>
+    <string name="setting_item_other">Other</string>
+    <string name="title_activity_sliding_drawer">SlidingDrawerActivity</string>
 
 </resources>

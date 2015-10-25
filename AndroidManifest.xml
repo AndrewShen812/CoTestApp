@@ -33,7 +33,7 @@
          The example key below will not be accepted because it is not linked to the
          certificate which you will use to sign this application.
          See: https://developers.google.com/maps/documentation/android/start
-         for instructions on how to get your own key.
+         for instructions on how to get your own key.
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -96,6 +96,14 @@
         <activity
             android:name="com.sy.cartracker.GoogleMapActivity"
             android:label="@string/title_activity_google_map" >
+        </activity>
+        <activity
+            android:name=".ListMenuActivity"
+            android:label="@string/title_activity_list_menu" >
+        </activity>
+        <activity
+            android:name=".SlidingDrawerActivity"
+            android:label="@string/title_activity_sliding_drawer" >
         </activity>
     </application>
 

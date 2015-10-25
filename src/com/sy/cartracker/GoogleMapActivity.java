@@ -145,11 +145,9 @@ OnMarkerDragListener, OnMapLongClickListener, OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap map) {
         mMap = map;
-
         // Override the default content description on the view, for accessibility mode.
         // Ideally this string would be localised.
         map.setContentDescription("Google Map with circles.");
-
         mRadiusBar.setOnSeekBarChangeListener(this);
         mMap.setOnMarkerDragListener(this);
         mMap.setOnMapLongClickListener(this);

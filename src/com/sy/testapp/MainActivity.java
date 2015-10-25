@@ -80,4 +80,12 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent(mContext, GoogleMapActivity.class);
         startActivity(intent);
     }
+    public void onListSetting(View v) {
+        Intent intent = new Intent(mContext, ListMenuActivity.class);
+        startActivity(intent);
+    }
+    public void onSlidingDrawer(View v) {
+        Intent intent = new Intent(mContext, SlidingDrawerActivity.class);
+        startActivity(intent);
+    }
 }
